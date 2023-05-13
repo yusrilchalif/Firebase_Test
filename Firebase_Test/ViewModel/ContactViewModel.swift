@@ -23,7 +23,7 @@ class ContactViewModel: ObservableObject {
             
             self.contacts = documents.map{( queryDocument) -> Contact in
                 let data = queryDocumentSnapshot.data()
-                let name = data["name"] as? String?? ""
+                let name = data["name"] as? String ?? ""
                 
                 return Contact(name: name)
             }
